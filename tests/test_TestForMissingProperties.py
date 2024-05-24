@@ -35,7 +35,6 @@ class TestForMissingProperties(unittest.TestCase):
             'heating.dhw.hygiene',
             'heating.dhw.temperature',
             'heating.burners',
-            'heating.solar',
 
             'heating.dhw.hygiene.trigger',
             'heating.dhw.operating.modes.off',
@@ -62,8 +61,13 @@ class TestForMissingProperties(unittest.TestCase):
             'device.messages.errors.raw',
             'device.productIdentification',
 
-            # gateway
-            'gateway.devices', # not used
+            # vitovent
+            "heating.bufferCylinder.sensors.temperature.main",
+            "heating.bufferCylinder.sensors.temperature.top",
+            "heating.configuration.dhw.temperature.dhwCylinder.max",
+            "heating.dhw.sensors.temperature.dhwCylinder",
+            "heating.dhw.sensors.temperature.dhwCylinder.bottom",
+            "heating.dhw.sensors.temperature.dhwCylinder.top",
         ]
 
         all_features = self.read_all_features()
