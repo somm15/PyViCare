@@ -110,12 +110,16 @@ class HeatingDevice(Device):
             if mode == VICARE_DHW_TEMP2:
                 return self.getDomesticHotWaterConfiguredTemperature2()
             return self.getDomesticHotWaterConfiguredTemperature()
-
         return None
 
     @handleNotSupported
     def getDomesticHotWaterStorageTemperature(self):
         return self.service.getProperty("heating.dhw.sensors.temperature.hotWaterStorage")["properties"]["value"][
+            "value"]
+
+    @handleNotSupported
+    def getDomesticHotWaterCylinderTemperature(self):
+        return self.service.getProperty("heating.dhw.sensors.temperature.dhwCylinder")["properties"]["value"][
             "value"]
 
     @handleNotSupported
